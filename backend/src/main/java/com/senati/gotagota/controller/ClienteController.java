@@ -12,26 +12,21 @@ import java.util.List;
 
 
 //3 ANOTACIONES
-//Indica que esta clase maneja peticiones HTTPS y DEVUELVE  JSON
+//Indica que esta clase maneja peticiones HTTPS y DEVUELVE JSON
 @RestController
-//Define la URL Base de todos los END-POINT de esta clase
+// Define la URL Base de todos los END-POINT de esta clase
 @RequestMapping("api/clientes")
-//Esta anotacion permite que el front-end puede llamar
-// Si no ponemos esto, el navegador bloquea las peticiones
-
+// Esta anotacion permite que el front-end pueda llamar a esta API
+// Si no ponemos esto, el navegador bloquea las peticiones por politicas CORS
 @CrossOrigin(origins = "*")
-
-
 public class ClienteController {
     //DECLARAMOS UNA VARIABLE DEFINIDA
-    //Inyectamos al servicio para acceder a la logica del negocio
-
+    // Inyectamos el servicio para acceder a la logica del negocio
     private final ClienteService clienteService;
     public ClienteController(ClienteService clienteService){
         this.clienteService = clienteService;
     }
-//GET /api /clientes -> devuelve todos los clientes en forma JSON
-
+    //GET /api/clientes -> devuelve todos los clientes en formato JSON
     @GetMapping
     public List<Cliente> listar() {return clienteService.listarTodos();}
 }
