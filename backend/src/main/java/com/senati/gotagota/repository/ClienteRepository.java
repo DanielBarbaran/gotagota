@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 public interface ClienteRepository extends JpaRepository<Cliente , Long> {
+    Long id(Long id);
 // No necesitamos escribir nada aqui
     // JpaRepository ya tiene_todo_lo_basico
 
