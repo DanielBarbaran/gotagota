@@ -62,16 +62,17 @@ document.addEventListener("click", function (e) {
             method: `DELETE`
 
         })
-            .then(response => {...
+            .then(response => {
                 if (respoonse.ok) {
-                    alert(`Cliente eliminado correctamente`);
-                    this.location.reload(); //recargar la pagina para reflejar los cambios 
-                }else {
-                    alert(`Error al eliminar el cliente`);
-                }})
+            alert(`Cliente eliminado correctamente`);
+            this.location.reload(); //recargar la pagina para reflejar los cambios 
+        } else {
+            alert(`Error al eliminar el cliente`);
+        }
+    })
             }
         });
-                
+
 
 
 
